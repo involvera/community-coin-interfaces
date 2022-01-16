@@ -34,13 +34,13 @@ export interface IPutList {
 export interface IInputUnRaw {
     prev_transaction_hash: string
     vout: number
-    script_sig: Buffer[]
+    script_sig: string[]
 }
 
 export interface IOutputUnRaw {
     input_src_idxs: number[]
     value: number
-    script: Buffer[]
+    script: string[]
 }
 
 export interface IUTXOUnRaw {
@@ -210,7 +210,7 @@ export interface ILastCostChange {
     index: number    
 }
 
-export interface SocietyStats {
+export interface ISocietyStats {
     last_height: number
     total_contributor: number
     active_addresses: number
