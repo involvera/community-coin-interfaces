@@ -1,7 +1,16 @@
 {
-  "name": "community-coin-interfaces",
+  "name": "community-coin-types",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "cleanf": "npm clean && rm -rf node_modules"
+  },
   "repository": "https://github.com/involvera/community-coin-interfaces.git",
   "author": "fantasim <siuol@gmx.com>",
   "license": "MIT",

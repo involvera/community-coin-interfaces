@@ -31,6 +31,12 @@ export interface IPutList {
     fetched_at_cch: number
 }
 
+export interface IInputUnRaw {
+    prev_transaction_hash: string
+    vout: number
+    script_sig: Buffer[]
+}
+
 export interface IOutputUnRaw {
     input_src_idxs: number[]
     value: number
@@ -83,7 +89,12 @@ export interface ICostProposal {
 }
 
 export interface IScriptOrigin{
-    tx_id:Buffer
+    tx_id: Buffer
+    vout: number
+}
+
+export interface IScriptOriginUnRaw{
+    tx_id: string
     vout: number
 }
 
@@ -93,14 +104,25 @@ export interface IScriptProposal {
     content_nonce: number    
 }
 
+export interface IScriptProposalUnRaw {
+    origin: IScriptOriginUnRaw
+    pubkh: string
+    content_nonce: number    
+}
+
 export interface IConstitutionRule {
     title: string
     content: string
 }
 
+export interface IConstitutionProposalUnRaw {
+    proposal: IScriptProposalUnRaw
+    constitution: IConstitutionRule[]
+}
+
 export interface IConstitutionProposal {
-    proposal:IScriptProposal
-    constitution: []
+    proposal: IScriptProposal
+    constitution: IConstitutionRule[]
 }
 
 export interface IWallet {
@@ -150,3 +172,53 @@ export interface IContentLink {
     pubkh_origin: string
 }
 
+export interface ITransactionUnRaw {
+    lh: number
+    t: number
+    inputs: IInputUnRaw[]
+    outputs: IOutputUnRaw[]
+}
+
+export interface INewTXResp {
+    transaction: ITransactionUnRaw
+    puts: IPutList
+    rewards: IUnSerializedPut[]
+    utxos: IUTXOUnRaw[]
+}
+
+export interface IRewardLink {
+    lugh_height: number
+    tx_id: string
+    vout: number
+    output: IOutputUnRaw
+    category: string
+    pubkh_origin: string
+}
+
+export interface IProposalContext {
+    lugh_height: number
+    tx_height: number
+    constitution: IConstitutionProposal
+    costs: ICostProposal
+}
+
+export interface ILastCostChange {
+    t: string
+    pubkh: string
+    price: number
+    created_at: number
+    index: number    
+}
+
+export interface SocietyStats {
+    last_height: number
+    total_contributor: number
+    active_addresses: number
+    most_active_addresses: string[]
+    circulating_supply: string
+    circulating_vp_supply: string
+    constitution: IConstitutionProposalUnRaw
+    last_thread_cost_change: ILastCostChange
+    last_proposal_cost_change: ILastCostChange
+    costs: ICostProposal
+}
