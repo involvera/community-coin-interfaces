@@ -213,6 +213,7 @@ export interface ILastCostChange {
 export interface ISocietyStats {
     last_height: number
     total_contributor: number
+    total_proposal: number
     active_addresses: number
     most_active_addresses: string[]
     circulating_supply: string
