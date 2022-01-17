@@ -223,3 +223,13 @@ export interface ISocietyStats {
     last_proposal_cost_change: ILastCostChange
     costs: ICostProposal
 }
+
+export interface IUserVote {
+    has_approved: boolean
+    vote_lh: number
+}
+
+export interface IUserVoteProposal {
+    pubkh: string
+    user_vote: IUserVote
+}
