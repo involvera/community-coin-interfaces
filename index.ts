@@ -171,6 +171,7 @@ export interface IContentLink {
     index: number
     link: IKindLinkUnRaw
     pubkh_origin: string
+    user_vote: IUserVote
 }
 
 export interface ITransactionUnRaw {
