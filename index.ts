@@ -214,7 +214,7 @@ export interface IProposalContext {
     costs: ICostProposal
 }
 
-export interface CostHistory {
+export interface ICostHistory {
     proposal_index: number
     from_lh: number
     validated_at: number
@@ -231,7 +231,12 @@ export interface ISocietyStats {
     circulating_supply: string
     circulating_vp_supply: string
     constitution: IConstitutionProposalUnRaw
-    last_thread_cost_change: CostHistory
-    last_proposal_cost_change: CostHistory
+    last_thread_cost_change: ICostHistory
+    last_proposal_cost_change: ICostHistory
     costs: ICostProposal
+}
+
+export interface IUserActivity {
+    last_lugh_height: number
+    activity: number[]
 }
