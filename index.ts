@@ -242,7 +242,8 @@ export interface IProposalContext {
 export interface ICostHistory {
     proposal_index: number
     from_lh: number
-    validated_at: number
+    validated_at_time: number
+    validated_at_tx_height: number
     thread_cost: number
     proposal_cost: number
 }
