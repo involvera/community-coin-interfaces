@@ -42,6 +42,12 @@ export interface IPutList {
     fetched_at_cch: number
 }
 
+export interface IInputRaw {
+    prev_transaction_hash: Buffer
+    vout: Buffer
+    script_sig: Buffer[]
+}
+
 export interface IInputUnRaw {
     prev_transaction_hash: string
     vout: number
@@ -52,6 +58,12 @@ export interface IOutputUnRaw {
     input_src_idxs: number[]
     value: number
     script: string[]
+}
+
+export interface IOutputRaw {
+	input_src_idxs: Buffer[]
+	value:        Buffer
+	script:				Buffer[]
 }
 
 export interface IUTXOUnRaw {
@@ -197,6 +209,13 @@ export interface ITransactionUnRaw {
     outputs: IOutputUnRaw[]
 }
 
+export interface ITransactionRaw {
+    lh:      Buffer
+	t:       Buffer
+	inputs:  IInputRaw[]
+	outputs: IOutputRaw[] 
+}
+
 export interface INewTXResp {
     transaction: ITransactionUnRaw
     puts: IPutList
@@ -240,4 +259,11 @@ export interface ISocietyStats {
     last_thread_cost_change: ICostHistory
     last_proposal_cost_change: ICostHistory
     costs: ICostProposal
+}
+
+export interface IRewardSummary {
+    value: number
+    reaction_count: IReactionCount
+    last_at: number
+    thread_pkh: string
 }
