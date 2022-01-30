@@ -77,12 +77,18 @@ export interface ICCHList{
     last_height: number   
 }
 
+export interface IUserActivity {
+    last_lugh_height: number
+    activity: number[]
+}
+
 export interface IWalletInfo {
     content_nonce: number
     balance: number
     vote_power_count: number
     rewards_received_270: number
-    position: number    
+    position: number
+    activity: IUserActivity 
 }
 
 export interface IContract {
@@ -234,9 +240,4 @@ export interface ISocietyStats {
     last_thread_cost_change: ICostHistory
     last_proposal_cost_change: ICostHistory
     costs: ICostProposal
-}
-
-export interface IUserActivity {
-    last_lugh_height: number
-    activity: number[]
 }
