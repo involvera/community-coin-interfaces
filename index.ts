@@ -73,7 +73,7 @@ export interface IFees {
 }
 
 export interface ICCHList{
-    list: string
+    list: string[]
     last_height: number   
 }
 
