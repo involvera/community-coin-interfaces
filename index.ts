@@ -31,6 +31,7 @@ export interface IUnSerializedPut {
     kind: TByte
     lh: number
     tx_id: string
+    put_idx: number
     link: ILink
     pubkh: IPubKH
     value: IValue
