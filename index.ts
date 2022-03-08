@@ -30,16 +30,11 @@ export interface IUnSerializedPut {
     time: number
     kind: TByte
     lh: number
-     tx_id: string
+    tx_id: string
     link: ILink
     pubkh: IPubKH
     value: IValue
     extra_data: string
-}
-
-export interface IPutList {
-    list: IUnSerializedPut[]
-    fetched_at_cch: number
 }
 
 export interface IInputRaw {
@@ -162,7 +157,6 @@ export interface IWallet {
     utxos: IUTXOUnRaw[]   
     costs: ICostProposal
     constitution: IConstitutionRule
-    last_rewards: IUnSerializedPut[]
 }
 
 export interface IReactionCount {
@@ -218,8 +212,6 @@ export interface ITransactionRaw {
 
 export interface INewTXResp {
     transaction: ITransactionUnRaw
-    puts: IPutList
-    rewards: IUnSerializedPut[]
     utxos: IUTXOUnRaw[]
 }
 
