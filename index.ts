@@ -261,3 +261,8 @@ export interface IRewardSummary {
     last_at: number
     thread_pkh: string
 }
+
+export interface IHeaderSignature {
+    pubkey: string
+    signature: string
+}
