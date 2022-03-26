@@ -256,10 +256,17 @@ export interface ISocietyStats {
 }
 
 export interface IRewardSummary {
+    thread_lh: number
     value: number
     reaction_count: IReactionCount
     last_at: number
     thread_pkh: string
+}
+
+export interface IThreadReward {
+    thread_pkh: string
+    reaction_count: IReactionCount
+    user_reaction_count: IReactionCount
 }
 
 export interface IHeaderSignature {
