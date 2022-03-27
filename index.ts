@@ -256,7 +256,6 @@ export interface ISocietyStats {
 }
 
 export interface IRewardSummary {
-    thread_lh: number
     value: number
     reaction_count: IReactionCount
     last_at: number
