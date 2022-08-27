@@ -14,7 +14,6 @@
   "repository": "https://github.com/involvera/community-coin-interfaces.git",
   "author": "fantasim <siuol@gmx.com>",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "rollup": "^2.46.0",
     "rollup-plugin-typescript2": "^0.30.0",
