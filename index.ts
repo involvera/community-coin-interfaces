@@ -203,6 +203,7 @@ export interface IContentLink {
 }
 
 export interface ITransactionUnRaw {
+    v?: TByte
     lh: number
     t: number
     inputs: IInputUnRaw[]
@@ -210,6 +211,7 @@ export interface ITransactionUnRaw {
 }
 
 export interface ITransactionRaw {
+    v?: TByte
     lh:      Uint8Array
 	t:       Uint8Array
 	inputs:  IInputRaw[]
