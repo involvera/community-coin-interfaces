@@ -249,6 +249,7 @@ export interface ICostHistory {
 }
 
 export interface ISocietyStats {
+    version: TByte
     last_height: number
     total_contributor: number
     total_proposal: number
