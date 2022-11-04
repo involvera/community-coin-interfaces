@@ -11,11 +11,6 @@ export interface IUserVote {
     vote_time: number
 }
 
-export interface IUserVoteProposal {
-    pubkh: string
-    user_vote: IUserVote
-}
-
 export interface IPubKH {
     sender: string
     recipient: string
@@ -72,7 +67,7 @@ export interface IUTXOUnRaw {
     idx: number
     output: IOutputUnRaw
     mr: number
-    cch: string
+    lh: number
 }
 
 export interface IPKH_UTXOS {
@@ -83,11 +78,6 @@ export interface IPKH_UTXOS {
 export interface IFees {
     fee_per_byte: number
     address: number
-}
-
-export interface ICCHList{
-    list: string[]
-    last_height: number   
 }
 
 export interface IUserActivity {
@@ -102,11 +92,6 @@ export interface IWalletInfo {
     rewards_received_270: number
     position: number
     activity: IUserActivity 
-}
-
-export interface IContract {
-    value: Uint8Array
-    next_change: number
 }
 
 export interface ICostProposal { 
@@ -156,13 +141,11 @@ export interface IConstitutionProposal {
 }
 
 export interface IWallet {
-    contract: IContract
     info: IWalletInfo
-    cch: ICCHList
+    last_height: number
     fees: IFees
     utxos: IUTXOUnRaw[]   
     costs: ICostProposal
-    constitution: IConstitutionRule
 }
 
 export interface IRewardCount {
@@ -199,7 +182,6 @@ export interface IContentLink {
     index: number
     link: IKindLinkUnRaw
     pubkh_origin: string
-    user_vote: IUserVote
 }
 
 export interface ITransactionUnRaw {
@@ -261,13 +243,6 @@ export interface ISocietyStats {
     last_thread_cost_change: ICostHistory
     last_proposal_cost_change: ICostHistory
     costs: ICostProposal
-}
-
-export interface IRewardSummary {
-    value: number
-    reward_count: IRewardCount
-    last_at: number
-    thread_pkh: string
 }
 
 export interface IThreadReward {
