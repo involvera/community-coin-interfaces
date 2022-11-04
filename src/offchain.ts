@@ -1,7 +1,7 @@
-import { ONCHAIN } from './onchain'
+import ONCHAIN from './onchain'
 import { TByte } from './general'
 
-export namespace OFFCHAIN {
+namespace OFFCHAIN {
     
     export interface IUnSerializedPut {
         time: number
@@ -69,15 +69,6 @@ export namespace OFFCHAIN {
         has_approved: boolean
         vote_time: number
     }
-    
-    export interface IContentLink {
-        rewards: ONCHAIN.IRewardCollectionPut
-        vote: ONCHAIN.IVoteSummary
-        index: number
-        link: ONCHAIN.IKindLinkUnRaw
-        pubkh_origin: string
-        user_vote: IUserVote
-    }
 
     export interface IConstitutionData {
         proposal: IProposal
@@ -143,3 +134,5 @@ export namespace OFFCHAIN {
         info: ONCHAIN.IWalletInfo
     }
 }
+
+export default OFFCHAIN

@@ -1,5 +1,5 @@
-import * as ONCHAIN from './src/onchain'
-import * as OFFCHAIN from './src/offchain'
+import ONCHAIN from './src/onchain'
+import OFFCHAIN from './src/offchain'
 import * as Constant from './src/general'
 
 export { 

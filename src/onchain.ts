@@ -1,6 +1,6 @@
 import {TByte} from './general'
 
-export namespace ONCHAIN {
+namespace ONCHAIN {
     export interface IUserVote {
         has_approved: boolean
         vote_time: number
@@ -179,6 +179,15 @@ export namespace ONCHAIN {
         link: IKindLinkUnRaw
         pubkh_origin: string
     }
+
+    export interface IProposalLink {
+        rewards: ONCHAIN.IRewardCollectionPut
+        vote: ONCHAIN.IVoteSummary
+        index: number
+        link: ONCHAIN.IKindLinkUnRaw
+        pubkh_origin: string
+        user_vote: IUserVote
+    }
     
     export interface ITransactionUnRaw {
         v?: TByte
@@ -252,3 +261,5 @@ export namespace ONCHAIN {
         signature: string
     }
 }
+
+export default ONCHAIN
