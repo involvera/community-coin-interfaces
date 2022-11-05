@@ -111,7 +111,6 @@ namespace OFFCHAIN {
         stats: ISocietyStats
         costs: ONCHAIN.ICostProposal
         constitution: IConstitutionData
-        contributors: IContributorStats[]
     }
     
 
