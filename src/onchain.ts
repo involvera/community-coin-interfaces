@@ -1,6 +1,8 @@
 import {TByte} from './general'
 
 namespace ONCHAIN {
+    export type TProposalType = "COSTS" | "APPLICATION" | "CONSTITUTION"
+
     export interface IUserVote {
         has_approved: boolean
         vote_time: number

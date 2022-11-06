@@ -37,13 +37,35 @@ namespace OFFCHAIN {
         user_vote?: IUserVote | null
     }
 
-    export interface IPreviewProposal {
+    export interface IPreviewThread2 {
+        pkh: string
+        author: IAuthor
+        created_at: Date
+        target: IPreviewThread2 | IPreviewProposal2 | null
+        title: string
+        content: string
+        sid: number
+        spname: string
+    }
+      
+    export interface IPreviewProposal2 {
+        index: number
+        layer: ONCHAIN.TProposalType
+        author: IAuthor
+        created_at: Date
+        vote: ONCHAIN.IVoteSummary
+        title: string
+        sid: number
+        spname: string
+    }
+
+    export interface IPreviewProposal1 {
         preview_code: string
         user_vote: IUserVote
         vote: ONCHAIN.IVoteSummary
     }
 
-    export interface IPreviewThread {
+    export interface IPreviewThread1 {
         preview_code: string
         content_link: ONCHAIN.IKindLinkUnRaw
         reward: ONCHAIN.IThreadReward
@@ -58,7 +80,7 @@ namespace OFFCHAIN {
         content: string
         created_at: Date        
         content_link: ONCHAIN.IKindLinkUnRaw
-        target?: IThreadTargetGroup | IPreviewProposal | null
+        target?: IThreadTargetGroup | IPreviewProposal2 | null
     }
 
     export interface IThreadViewGroup {
