@@ -72,30 +72,6 @@ namespace OFFCHAIN {
         reply_count: number
     }
 
-    export interface IThreadTargetGroup {
-        sid: number
-        author: IAuthor
-        public_key_hashed: string
-        title: string
-        content: string
-        created_at: Date        
-        content_link: ONCHAIN.IKindLinkUnRaw
-        target?: IThreadTargetGroup | IPreviewProposal2 | null
-    }
-
-    export interface IThreadViewGroup {
-        sid: number
-        author: IAuthor
-        public_key_hashed: string
-        title: string
-        content: string
-        created_at: Date        
-        content_link: ONCHAIN.IKindLinkUnRaw
-        reply_count: number
-        reward: ONCHAIN.IThreadReward
-        target?: IThreadTargetGroup
-    }
-
     export interface IUserVote {
         has_approved: boolean
         vote_time: number
@@ -144,6 +120,29 @@ namespace OFFCHAIN {
         constitution: IConstitutionData
     }
     
+    export interface IThreadTargetGroup {
+        sid: number
+        author: IAuthor
+        public_key_hashed: string
+        title: string
+        content: string
+        created_at: Date        
+        content_link: ONCHAIN.IKindLinkUnRaw
+        target?: IThreadTargetGroup | IPreviewProposal2 | null
+    }
+
+    export interface IThreadViewGroup {
+        sid: number
+        author: IAuthor
+        public_key_hashed: string
+        title: string
+        content: string
+        created_at: Date        
+        content_link: ONCHAIN.IKindLinkUnRaw
+        reply_count: number
+        reward: ONCHAIN.IThreadReward
+        target?: IThreadTargetGroup
+    }
 
     export interface IThread {
         sid: number
