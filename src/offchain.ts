@@ -50,19 +50,28 @@ namespace OFFCHAIN {
         reply_count: number
     }
 
-    export interface IThreadViewGroup {
+    export interface IThreadTargetGroup {
         sid: number
         author: IAuthor
         public_key_hashed: string
-        index: number
         title: string
         content: string
         created_at: Date        
         content_link: ONCHAIN.IKindLinkUnRaw
-        target_pkh: string
+        target?: IThreadTargetGroup | IPreviewProposal | null
+    }
+
+    export interface IThreadViewGroup {
+        sid: number
+        author: IAuthor
+        public_key_hashed: string
+        title: string
+        content: string
+        created_at: Date        
+        content_link: ONCHAIN.IKindLinkUnRaw
         reply_count: number
         reward: ONCHAIN.IThreadReward
-        target?: IThreadViewGroup
+        target?: IThreadTargetGroup
     }
 
     export interface IUserVote {
