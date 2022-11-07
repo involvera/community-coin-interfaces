@@ -35,6 +35,7 @@ namespace OFFCHAIN {
         author: IAuthor
         pubkh_origin?: string
         user_vote?: IUserVote | null
+        context?: string | null
     }
 
     export interface IPreviewThread2 {
