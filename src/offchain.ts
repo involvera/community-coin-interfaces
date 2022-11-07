@@ -142,7 +142,7 @@ namespace OFFCHAIN {
         content_link: ONCHAIN.IKindLinkUnRaw
         reply_count: number
         reward: ONCHAIN.IThreadReward
-        target?: IThreadTargetGroup
+        target?: IThreadTargetGroup | IPreviewProposal2 | null
     }
 
     export interface IThread {
